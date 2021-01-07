@@ -1,0 +1,23 @@
+body{
+    font-family: sans-serif;
+    background-color: gray;
+    font-size: 48px;
+}
+
+h1{
+    color: white;
+}
+
+strong{
+    color:red;
+}
+
+.sup{
+    padding-left: 30%;
+    padding-top: 20px;
+}
+
+li{
+    color: aqua;
+    padding-top: 40px;
+}
