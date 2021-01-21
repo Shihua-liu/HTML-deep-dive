@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les 2</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        function haalElementenOp(){
+            let fotoslider = document.getElementById("fotoslider");
+            console.log(fotoslider);
+            let eersteFotoDiv = document.querySelector('.foto');
+            console.log(eersteFotoDiv);
+            let alleFotoDivs = document.querySelectorAll('.foto');
+            console.log(alleFotoDivs);
+
+            fotoslider.className = 'fotoslider';
+
+            // fotoslider.innerHTML = 'nu is het tekst';
+
+            fotoslider.style.borderColor = 'gray';
+            fotoslider.style.borderStyle = 'solid';
+            fotoslider.style.borderWidth = '7px';
+            fotoslider.position = 'absolute';
+            fotoslider.left = '100px';
+            for (let i = 0; i < alleFotoDivs; i++) {
+                let item = alleFotoDivs[i];
+                item.style.backgroudnColor="#FF0000";
+                item.style.border="15px solid black";
+                item.innerHTML = "foto" + i;
+            }
+        }
+
+
+        window.addEventListener('DOMContentLoaded', haalElementenOp)
+    </script>
+</head>
+<body>
+    <div id="fotoslider">
+        <div class="foto"><img src="../image/foto1.jpg" /></div>
+        <div class="foto"><img src="../image/foto2.jpg" /></div>
+        <div class="foto"><img src="../image/foto3.jpg" /></div>
+        <div class="foto"><img src="../image/foto4.jpg" /></div>
+        <div class="foto"><img src="../image/foto5.jpg" /></div>
+    </div>
+</body>
+</html>

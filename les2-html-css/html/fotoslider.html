@@ -5,14 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Les 2</title>
     <link rel="stylesheet" href="../css/style.css">
+    <script>
+        let fotonummer, fotobreedte, aantalfotos, fotoslider;
+        fotonummer = 0;
+        fotobreedte = 200;
+        function setupFotoslider() {
+            //alert("Ja, het script werkt!");
+            
+            fotoslider = document.getElementById("fotoslider")
+            let volgendeKnop = document.getElementById("volgende-btn")
+            let vorigeKnop = document.getElementById("vorige-btn")
+            aantalfotos = fotoslider.children.length;
+            volgendeKnop.addEventListener("click", volgendefoto);
+            vorigeKnop.addEventListener("click", vorigefoto);
+        }
+
+        function volgendefoto(){
+            // alert('Volgende geklikt!');
+            fotonummer += 1;
+            if (fotonummer === aantalfotos) {
+                fotonummer = 0;
+            }
+            let afstandNaarLinks = -1 * (fotonummer * fotobreedte)
+            fotoslider.style.left = afstandNaarLinks + "px";
+        }
+    
+        // VOEG HIER de code toe die de setupFotoslider() functie pas start als de DOM is volledig geladen
+        window.addEventListener('DOMContentLoaded', setupFotoslider)
+    </script>
 </head>
 <body>
-    <div id="fotoslider">
-        <div class="foto"><img src="../image/foto1.jpg" /></div>
-        <div class="foto"><img src="../image/foto2.jpg" /></div>
-        <div class="foto"><img src="../image/foto3.jpg" /></div>
-        <div class="foto"><img src="../image/foto4.jpg" /></div>
-        <div class="foto"><img src="../image/foto5.jpg" /></div>
+    <div id="viewport">
+        <div id="fotoslider">
+            <div class="foto"><img src="../image/foto1.jpg" /></div>
+            <div class="foto"><img src="../image/foto2.jpg" /></div>
+            <div class="foto"><img src="../image/foto3.jpg" /></div>
+            <div class="foto"><img src="../image/foto4.jpg" /></div>
+            <div class="foto"><img src="../image/foto5.jpg" /></div>
+        </div>
+    </div>
+    <div id="controls">
+        <button id="vorige-btn">Vorige</button>
+        <button id="volgende-btn">Volgende</button>
     </div>
 </body>
 </html>
