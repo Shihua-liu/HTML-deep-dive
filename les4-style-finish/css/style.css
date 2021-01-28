@@ -1,0 +1,43 @@
+body{
+    margin: 0;
+}
+#fotoslider{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    left: 0;
+    transition-property: left;
+    transition-duration: 400ms;
+    transition-timing-function: ease-out;
+}
+
+.foto{
+    width: 200px;
+    height: 150px;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+#viewport {
+    position: relative;
+    width: 200px;
+    height: 150px;
+    overflow: hidden;
+
+}
+
+#controls{
+    padding: 20px;
+    
+}
+
+.alles{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: aquamarine;
+}

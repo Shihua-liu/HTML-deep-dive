@@ -29,22 +29,35 @@
             let afstandNaarLinks = -1 * (fotonummer * fotobreedte)
             fotoslider.style.left = afstandNaarLinks + "px";
         }
+
+        function vorigefoto(){
+            fotonummer -= 1;
+            if (fotonummer < aantalfotos) {   
+                fotonummer = aantalfotos - 1;
+            }
+            let afstandNaarLinks = -1 * (fotonummer * fotobreedte)
+            fotoslider.style.left = afstandNaarLinks + "px";
+        }
+    
+        // VOEG HIER de code toe die de setupFotoslider() functie pas start als de DOM is volledig geladen
         window.addEventListener('DOMContentLoaded', setupFotoslider)
     </script>
 </head>
 <body>
-    <div id="viewport">
-        <div id="fotoslider">
-            <div class="foto"><img src="../image/foto1.jpg" /></div>
-            <div class="foto"><img src="../image/foto2.jpg" /></div>
-            <div class="foto"><img src="../image/foto3.jpg" /></div>
-            <div class="foto"><img src="../image/foto4.jpg" /></div>
-            <div class="foto"><img src="../image/foto5.jpg" /></div>
+    <div class="alles">
+        <div id="viewport">
+            <div id="fotoslider">
+                <div class="foto"><img src="../image/foto1.jpg" /></div>
+                <div class="foto"><img src="../image/foto2.jpg" /></div>
+                <div class="foto"><img src="../image/foto3.jpg" /></div>
+                <div class="foto"><img src="../image/foto4.jpg" /></div>
+                <div class="foto"><img src="../image/foto5.jpg" /></div>
+            </div>
         </div>
-    </div>
-    <div id="controls">
-        <button id="vorige-btn">Vorige</button>
-        <button id="volgende-btn">Volgende</button>
+        <div id="controls">
+            <button id="vorige-btn">Vorige</button>
+            <button id="volgende-btn">Volgende</button>
+        </div>
     </div>
 </body>
 </html>
