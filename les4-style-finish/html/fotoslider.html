@@ -31,12 +31,13 @@
         }
 
         function vorigefoto(){
-            fotonummer -= 1;
-            if (fotonummer < aantalfotos) {   
-                fotonummer = aantalfotos - 1;
-            }
-            let afstandNaarLinks = -1 * (fotonummer * fotobreedte)
-            fotoslider.style.left = afstandNaarLinks + "px";
+            
+        fotonummer = (fotonummer-1) % aantalfotos;
+        if (fotonummer < 0){
+            fotonummer = aantalfotos-1;
+        }            
+        let afstandNaarLinks = -1 * (fotonummer * fotobreedte)
+        fotoslider.style.left = afstandNaarLinks + "px";
         }
     
         // VOEG HIER de code toe die de setupFotoslider() functie pas start als de DOM is volledig geladen
